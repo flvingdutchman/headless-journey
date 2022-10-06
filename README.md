@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
 
+# Installaton
+Please install with `npm i`. 
+If you ran into issue described here [Issue #1819](https://github.com/kamilkisiela/apollo-angular/pull/1819), please apply this fix [PR #1819](https://github.com/kamilkisiela/apollo-angular/pull/1819/files)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
