@@ -1,0 +1,15 @@
+<div *ngIf="page">
+  <h1 class="text-4xl my-4">{{page.attributes.Title}}</h1>
+  <div *ngIf="heroImage" class="mx-auto my-2">
+    <img src="{{heroImage.data.attributes.formats.large.url}}" alt="Hero image"
+      class="rounded-lg aspect-video w-full" />
+  </div>
+  <div class="markdown-content my-4">
+    <markdown>
+      {{page.attributes.Content}}
+    </markdown>
+  </div>
+</div>
+<div *ngIf="pageNotFound">
+  Sorry, the page was not found
+</div>

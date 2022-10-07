@@ -22,7 +22,12 @@
       "dom",
       "esnext.asynciterable"
     ],
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@headless-world/graphql": ["src/app/graphql/index.ts"],
+      "@headless-world/navigation": ["src/app/navigation/index.ts"],
+      "@headless-world/content": ["src/app/content/index.ts"],
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

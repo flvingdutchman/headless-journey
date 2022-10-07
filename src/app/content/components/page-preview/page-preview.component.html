@@ -1,0 +1,19 @@
+<div class="my-4 p-4 border-gray-200 border" *ngIf="page">
+  <h2 class="text-2xl font-bold mb-2">{{page.attributes.Title}}</h2>
+  <div class="flex">
+    <div class="mr-2">
+      <img src="{{page.attributes.hero_image.data.attributes.formats.thumbnail.url}}" alt="Image"
+        class="rounded-lg" />
+    </div>
+    <div class="markdown-content ml-2">
+      <markdown ngPreserveWhitespaces>
+        {{page.attributes.Content | truncate: 255:'...'}}
+      </markdown>
+    </div>
+  </div>
+  <div class="my-4">
+    <a href="/article/{{page.attributes.Slug}}" class="rounded-full bg-gray-800 py-2 px-4 text-white">
+      Read more
+    </a>
+  </div>
+</div>

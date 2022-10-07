@@ -1,0 +1,6 @@
+<h1 class="text-4xl border-b py-2">Recent content</h1>
+<div *ngIf="!loading">
+  <div *ngFor="let page of pages">
+    <app-page-preview [page]="page"></app-page-preview>
+  </div>
+</div>
