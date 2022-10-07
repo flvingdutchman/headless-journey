@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { PageView, ImageView } from '@headless-world/graphql';
 import { Apollo } from 'apollo-angular';
@@ -15,7 +16,8 @@ export class PageComponent implements OnInit {
   public pageNotFound = false;
 
   constructor(private readonly activatedRoute: ActivatedRoute,
-    private readonly apollo: Apollo) {}
+    private readonly apollo: Apollo,
+    private readonly titleService: Title) {}
 
   ngOnInit(): void {
     const slug = this.activatedRoute.snapshot.paramMap.get('article');
@@ -32,6 +34,7 @@ export class PageComponent implements OnInit {
       if (data.pages.data.length > 0) {
         this.page = data.pages.data[0];
         this.heroImage = this.page.attributes.hero_image;
+        this.titleService.setTitle(this.page.attributes.Title);
       } else {
         this.pageNotFound = true;
       }

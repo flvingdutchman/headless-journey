@@ -22,8 +22,8 @@ export type ImageFormatsView = {
 export type CategoryView = {
   data: {
     attributes: {
-      Slug: String;
-      Name: String;
+      Slug: string;
+      Name: string;
     }
   }
 }
@@ -37,9 +37,9 @@ export type ImageView = {
 export type PageView = {
   attributes: {
     hero_image: ImageView;
-    Title: String;
-    Content: String;
-    Slug: String;
+    Title: string;
+    Content: string;
+    Slug: string;
     category: CategoryView
   }
 }
