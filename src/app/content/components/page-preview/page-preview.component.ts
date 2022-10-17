@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PageView } from '@headless-world/graphql';
+import { PagePreviewView } from '@headless-world/graphql';
 
 @Component({
   selector: 'app-page-preview',
@@ -8,7 +8,7 @@ import { PageView } from '@headless-world/graphql';
 })
 export class PagePreviewComponent implements OnInit {
   @Input()
-  public page: PageView | null = null;
+  public page: PagePreviewView | null = null;
 
   ngOnInit(): void {
   }

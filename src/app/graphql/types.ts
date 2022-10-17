@@ -34,14 +34,43 @@ export type ImageView = {
   }
 }
 
-export type PageView = {
+export type PagePreviewView = {
   attributes: {
-    hero_image: ImageView;
+    PreviewImage: ImageView;
     Title: string;
-    Content: string;
+    PreviewText: string;
     Slug: string;
     category: CategoryView
   }
 }
 
-export type EntityView = ImageView | PageView | CategoryView;
+export type ComponentCommercialHeroView = {
+  __typename: string;
+  HeroText: string;
+  HeroSubtext: string;
+  HeroImage: ImageView
+}
+
+export type ComponentContentBlockquoteView = {
+  __typename: string;
+  Text: string;
+}
+
+export type ComponentCommercialStoryTellingView = {
+  __typename: string;
+  Text: string;
+  Image: ImageView;
+}
+
+export type BlockView = ComponentCommercialHeroView | ComponentContentBlockquoteView | ComponentCommercialStoryTellingView;
+
+export type PageView = {
+  attributes: {
+    Title: string;
+    Slug: string;
+    category: CategoryView;
+    Blocks: BlockView[]
+  }
+}
+
+export type EntityView = ImageView | PagePreviewView | CategoryView | PageView;

@@ -27,6 +27,7 @@
       "@headless-world/graphql": ["src/app/graphql/index.ts"],
       "@headless-world/navigation": ["src/app/navigation/index.ts"],
       "@headless-world/content": ["src/app/content/index.ts"],
+      "@headless-world/ui-engine": ["src/app/ui-engine/index.ts"],
     }
   },
   "angularCompilerOptions": {

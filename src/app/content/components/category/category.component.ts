@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Apollo } from 'apollo-angular';
-import { PageView } from '@headless-world/graphql';
+import { PagePreviewView } from '@headless-world/graphql';
 import { CONTENT_IN_CATEGORIES_QUERY, ContentDto } from '../../graphql/category-content.query';
 import { filter } from 'rxjs';
 import { Title } from '@angular/platform-browser';
@@ -13,7 +13,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class CategoryComponent implements OnInit {
   public categoryName: string | null = null;
-  public pages: PageView[] = [];
+  public pages: PagePreviewView[] = [];
   public loading: boolean = true;
 
   constructor(

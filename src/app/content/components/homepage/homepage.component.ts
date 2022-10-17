@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { Subscription } from 'rxjs';
-import { PageView } from '@headless-world/graphql';
+import { PagePreviewView } from '@headless-world/graphql';
 import { ALL_PAGES_QUERY, ContentDto } from '../../graphql/page.query';
 
 @Component({
@@ -12,7 +12,7 @@ import { ALL_PAGES_QUERY, ContentDto } from '../../graphql/page.query';
 export class HomepageComponent implements OnInit, OnDestroy {
   private contentSubscription: Subscription | null = null;
   public loading = true;
-  public pages: PageView[] = [];
+  public pages: PagePreviewView[] = [];
 
   constructor(private readonly apollo: Apollo) { }
 

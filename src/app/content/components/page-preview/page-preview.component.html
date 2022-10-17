@@ -2,12 +2,12 @@
   <h2 class="text-2xl font-bold mb-2">{{page.attributes.Title}}</h2>
   <div class="flex">
     <div class="mr-2">
-      <img src="{{page.attributes.hero_image.data.attributes.formats.thumbnail.url}}" alt="Image"
+      <img src="{{page.attributes.PreviewImage.data.attributes.formats.thumbnail.url}}" alt="Image"
         class="rounded-lg" />
     </div>
     <div class="markdown-content ml-2">
       <markdown ngPreserveWhitespaces>
-        {{page.attributes.Content | truncate: 255:'...'}}
+        {{page.attributes.PreviewText}}
       </markdown>
     </div>
   </div>

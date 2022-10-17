@@ -1,7 +1,13 @@
 import {gql} from 'apollo-angular';
-import { PageView } from '@headless-world/graphql';
+import { PagePreviewView, PageView } from '@headless-world/graphql';
 
 export type ContentDto = {
+  pages: {
+    data: PagePreviewView[]
+  }
+}
+
+export type PageDto = {
   pages: {
     data: PageView[]
   }
@@ -12,23 +18,22 @@ export const ALL_PAGES_QUERY = gql`
     pages(locale: $locale, sort: "createdAt:desc") {
       data {
         attributes {
-          hero_image {
+          Title
+          Slug
+          PreviewText
+          PreviewImage {
               data {
                   attributes {
                       formats
                   }
               }
           }
-          Title
-          Slug
-          Content
           category {
-            data {
-                attributes {
-                    Slug,
-                    Name
-                }
-            }
+              data {
+                  attributes {
+                      Slug
+                  }
+              }
           }
         }
       }
@@ -41,23 +46,49 @@ export const PAGE_BY_SLUG_QUERY = gql`
     pages(locale: $locale, filters: {Slug: {eq: $slug}}) {
       data {
         attributes {
-          hero_image {
+          Title
+          Slug
+          PreviewText
+          PreviewImage {
               data {
                   attributes {
                       formats
                   }
               }
           }
-          Title
-          Slug
-          Content
+          Blocks {
+              __typename
+              ... on ComponentContentBlockquote {
+                  Text
+              }
+              ... on ComponentCommercialHero {
+                  HeroText
+                  HeroSubtext
+                  HeroImage {
+                      data {
+                          attributes {
+                              formats
+                          }
+                      }
+                  }
+              }
+              ... on ComponentCommercialStoryTelling {
+                  Text
+                  Image {
+                      data {
+                           attributes {
+                              formats
+                          }
+                      }
+                  }
+              }
+          }
           category {
-            data {
-                attributes {
-                    Slug,
-                    Name
-                }
-            }
+              data {
+                  attributes {
+                      Slug
+                  }
+              }
           }
         }
       }

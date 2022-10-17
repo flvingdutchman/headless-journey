@@ -1,0 +1,13 @@
+<div class="my-8 p-4 border-gray-200 border">
+  <div class="flex">
+    <div class="mr-2">
+      <img src="{{data.Image.data.attributes.formats.thumbnail.url}}" alt="Image"
+        class="rounded-lg" />
+    </div>
+    <div class="markdown-content ml-2">
+      <markdown ngPreserveWhitespaces>
+        {{data.Text}}
+      </markdown>
+    </div>
+  </div>
+</div>
